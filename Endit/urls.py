@@ -1,8 +1,8 @@
-from django.conf.urls import url
-from django.contrib import admin 
+
 from . import views
- 
+from django.conf.urls import include, url
+
 urlpatterns = [
- url(r'^$', views.home, name='home'),
- url(r'login_form', views.login_form, name='login_form'),
+ url(r'^/$', views.home, name='home'),
+ url(r'^members/', include('members.urls'), name="members")
 ]

@@ -15,10 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from django.conf.urls.static import static
 
 
 urlpatterns = [
-    url(r'^admin/', include(admin.site.urls)),
-    url(r'^Endit', include('Endit.urls')),
+    url(r'^admin/', include(admin.site.urls,)),
+    url(r'^Endit', include('Endit.urls', namespace="Endit")),
+    url(r'^members/', include('members.urls', namespace="members"))
 ]
