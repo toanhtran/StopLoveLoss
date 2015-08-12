@@ -2,6 +2,7 @@
 {{ user.last_name}}
 <form action='register' method='post'>
 	{% csrf_token %}
+<<<<<<< HEAD
 	<p>User Name:</p>
 	<input name='user_name'>
 	<p>First Name:</p>
@@ -14,4 +15,16 @@
 	<input name='password'>
 	<br></br>
 	<input type="submit" value="Sign up">
+=======
+	<p>First Name:</p>
+	<input name = 'first_name'>
+	<p>Last Name:</p>
+	<input name = 'last_name'>
+	<p>E-mail:</p>
+	<input name = 'email'>
+	<p>Password:</p>
+	<input name = 'password'>
+	<br></br>
+	<input type = "submit" value = "Sign up">
+>>>>>>> 0dfbdeb4cc76ff4636028d779ef8117857bcab08
 </form>

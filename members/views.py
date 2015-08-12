@@ -15,6 +15,7 @@ def index(request):
 def signup_form(request):
 	return render(request, 'members/signup.html', {})
 
+<<<<<<< HEAD
 def login_form(request):
 	return render(request, 'members/login.html', {})
 
@@ -51,3 +52,7 @@ def logout_view(request):
 
 
 
+=======
+def login(request):
+	return render(request, 'members/login.html', {})
+>>>>>>> 0dfbdeb4cc76ff4636028d779ef8117857bcab08

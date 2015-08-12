@@ -19,6 +19,10 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls,)),
+<<<<<<< HEAD
     url(r'^Endit/', include('Endit.urls', namespace="Endit")),
+=======
+    url(r'^Endit', include('Endit.urls', namespace="Endit")),
+>>>>>>> 0dfbdeb4cc76ff4636028d779ef8117857bcab08
     url(r'^members/', include('members.urls', namespace="members"))
 ]
