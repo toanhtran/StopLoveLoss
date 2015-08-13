@@ -2,12 +2,16 @@
 
 <link rel="stylesheet" type="text/css" href="{% static 'Endit/style.css' %}" />
 
-<h1> This page tracks all the lows </h1>
+<h1> This page tracks all the Lows </h1>
 
 <p> All the stupid stuff that your partners does that annoys you. List it here and put why it annoys and what would you recommend for a change.</p>
 
-<ul>
-	<li> Leaves the toliet seat up </li>
-	<li> Hogs all the covers on the bed </li>
-	<li> Curses like a sailor because he is one! </li>
-</ul>
+
+<form action='new_low' method='post'>
+{% csrf_token %}
+	<p>Low:</p>
+	<textarea name='lows' name='lows'></textarea><br/><br/>
+	
+	<input type = "submit" value="Add a low">
+</form>
+

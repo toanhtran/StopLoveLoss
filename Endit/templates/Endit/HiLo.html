@@ -7,17 +7,29 @@
 	<title> High/Low</title>
 </head>
 <body>
-	<p> Track all the great stuff your partners does and how it makes you feel.</p>
-</p> You can share the this list with your partner to tell them how great they are doing. </p>
+	<h1> Highs and Lows</h1>
+	<p> Highs-track all the great stuff your partners does.</p>
+	<p> Lows-tracks all the crappy things they do that you don't like. 
 
-These are the highs: {{highs}}
+</p> You can share the this list with your partner to tell them how great they are doing and the status of your happiness. </p>
+<h2 id='highs'>Highs:</h2>
+{% if highs %}
+	{% csrf_token %}
+	<ul>
+		{% for high in highs %}
+		<li>{{ high.description }}</li>
+		{% endfor %}
+	</ul>
+	{{ total_highs}}
+	{% endif %}
 
-<ol>
-	<li>let me sleep on the weekend and did all the laundry</li>
-	<li>Bought me pastaschio gelato, my favorite dessert!</li>
-	<li>Cooked me a fabulous dinner</li>
-	<li>Cleaned out my car</li>
-	<li>Puts cash in my wallet to make sure I have $</li>
-
-</body>
-</html>
+<h2 id='lows'>Lows:</h2>
+{% if lows %}
+	{% csrf_token %}
+	<ul>
+		{% for low in lows %}
+		<li>{{ low.description }}</li>
+		{% endfor %}
+		{{ total_lows }}
+	</ul>
+	{% endif %}
