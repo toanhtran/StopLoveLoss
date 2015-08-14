@@ -16,6 +16,7 @@
 <h1> RELATIONSHIP STATUS</h1>
 
 <h2> HAPPINESS RATIO: {{total_lows}}:{{total_highs}}
+	<p>{{message}}</p> 
 
 	<h1>TOTAL HIGHS: {{ total_highs }}</h1>
 
@@ -24,7 +25,8 @@
 	{% csrf_token %}
 	<ul>
 		{% for high in highs %}
-		<li>{{ high.description }}</li>
+		<li><a>{{ high.description }}</a>
+			<a href="{% url 'Endit:delete_HiLo'%}/{{ high.id}}">Remove</a></li>
 		{% endfor %}
 	</ul>
 	{% endif %}
@@ -33,7 +35,7 @@
 <h2 id='lows'>LOWS</h2>
 {% if lows %}
 	{% csrf_token %}
-	<ul>
+	<ul class="lows_items">
 		{% for low in lows %}
 		<li>{{ low.description }}</li>
 		{% endfor %}
@@ -41,16 +43,18 @@
 	</ul>
 	{% endif %}
 
-<h1> YOUR HAPPINESS RATIO {{total_lows}}:{{total_highs}}</h1>
-<p> A good ratio for happiness is for every LOW you should have at least eight HIGHS to combat the bad in your relationship 
+<h1> YOUR HAPPINESS RATIO {{total_lows}}:{{total_highs}} {{ ratio }}</h1>
+<p> A good ratio for happiness is for every LOW you should have at least eight HIGHS to combat the bad in your relationship</p>
+
 	<ol>
 		<li>1:20 Your relationship is awesome! You are Platinum</li>
 		<li> 1:15  You are in a great relationship. You are Golden</li>
 		<li>1:10 You are in good shape. Your are Silver</li>
-		<li> 1:8 You are Bronze. This is the minimum bad to good ration you should have. 
+		<li> 1:8 This is the minimum bad to good ration you should have. You are Bronze. 
 		<li>1:5 Your relationship is BAD and heading towards the rocks. 
 		<li>1:1 Half the time you are happy the other half your are miserable. This prebreak stage. 
-		<li> 8:1 Your relationship sucks! It is time to END IT NOW. GET OUT!
+		<li> 5:1 You relationship is heading towards splitsville. It's time to give the, "It's you, not me speech"
+		<li> 8:1 Your relationship sucks! What are you waiting for? It is time to END. IT. NOW.
 
 
 
