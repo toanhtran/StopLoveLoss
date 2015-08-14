@@ -10,15 +10,16 @@
 	<h1> PROFILE</h1>
 	<p> Highs-track all the great stuff your partners does.</p>
 	<p> Lows-tracks all the crappy things they do that you don't like. 
+	<p>Happiness ration is a metric to see how your relationship is going. More highs = better relationship. If you have more lows = bad relationship.
 
-</p> You can share the this list with your partner to tell them how great they are doing and the status of your happiness. </p>
+</p> *You can share the this list with your partner to tell them how great they are doing and the status of your happiness. </p>
 <h1> RELATIONSHIP STATUS</h1>
 
 <h2> HAPPINESS RATIO: {{total_lows}}:{{total_highs}}
 
 	<h1>TOTAL HIGHS: {{ total_highs }}</h1>
 
-<h2 id='highs'>Highs</h2>
+<h2 id='highs'>HIGHS</h2>
 {% if highs %}
 	{% csrf_token %}
 	<ul>
@@ -29,7 +30,7 @@
 	{% endif %}
 
 <h1>TOTAL LOWS: {{ total_lows }}</h1>
-<h2 id='lows'>Lows</h2>
+<h2 id='lows'>LOWS</h2>
 {% if lows %}
 	{% csrf_token %}
 	<ul>
@@ -48,6 +49,7 @@
 		<li>1:10 You are in good shape. Your are Silver</li>
 		<li> 1:8 You are Bronze. This is the minimum bad to good ration you should have. 
 		<li>1:5 Your relationship is BAD and heading towards the rocks. 
+		<li>1:1 Half the time you are happy the other half your are miserable. This prebreak stage. 
 		<li> 8:1 Your relationship sucks! It is time to END IT NOW. GET OUT!
 
 

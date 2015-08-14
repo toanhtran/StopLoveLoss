@@ -52,7 +52,6 @@ def create_low(request):
 def new_lows(request):
 	new_lows=Lows()
 	new_lows.description = request.POST.get('lows')
-	# print request.POST.get("lows")
 	new_lows.user_id = request.user.id
 	new_lows.save()
 	return redirect('Endit:show_HiLo')
