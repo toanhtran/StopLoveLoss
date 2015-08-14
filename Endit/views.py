@@ -34,8 +34,11 @@ def show_HiLo(request):
 	for low in lows:
 		total_lows += 1
 	print total_lows
-
-	ratio = float(total_lows)/total_highs
+	if total_highs:
+		ratio = float(total_lows)/total_highs
+	else:
+		ratio = 0
+		message = "none"
 	if ratio > 0.9:
 		message = "Your relationship is awesome! You are Platinum. The notebook couple has nothing on you." 
 	if ratio > 0.8: 
@@ -50,13 +53,18 @@ def show_HiLo(request):
 		message = "Your relationship is BAD. Trash day if fast approaching."
 	if ratio > 2.0:
 		message = "Your relationship is heading towards splitsville. It's time to give the, 'The Talk'."
-	if ratio > 3.0:
+	if ratio > 4.0:
 		message = "Your relationship sucks! What are you waiting for? It is time to END.IT.NOW."
 
 	return render(request,'Endit/HiLo.html',{'highs':highs,'lows':lows,'total_highs':str(total_highs),'total_lows':str(total_lows),"message":message})
-def delete_HiLo(request, high_id):
+def delete_Hi(request, high_id):
 	highs=Highs.objects.get(id=high_id)
 	highs.delete()
+	return HttpResponseRedirect(reverse('Endit:show_HiLo'))
+
+def delete_Lo(request, low_id):
+	lows=Lows.objects.get(id=low_id)
+	lows.delete()
 	return HttpResponseRedirect(reverse('Endit:show_HiLo'))
 
 def create_low(request):

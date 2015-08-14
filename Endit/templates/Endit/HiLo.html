@@ -37,7 +37,8 @@
 	{% csrf_token %}
 	<ul class="lows_items">
 		{% for low in lows %}
-		<li>{{ low.description }}</li>
+		<li><a>{{ low.description }}</a>
+			<a href="/Endit/show_HiLo/{{ low.id }}/delete_low">Remove</a></li>
 		{% endfor %}
 		
 	</ul>

@@ -10,6 +10,8 @@ urlpatterns = [
  url(r'^show_HiLo$', views.show_HiLo, name='show_HiLo'),
  url(r'^create_low$', views.create_low, name='create_low'),
  url(r'^new_lows$', views.new_lows, name='new_lows'),
- url(r'^show_HiLo/(?P<high_id>[0-9]+)/delete$', views.delete_HiLo, name='delete_HiLo') 
+ url(r'^show_HiLo/(?P<high_id>[0-9]+)/delete$', views.delete_Hi, name='delete_Hi'),
+ url(r'^show_HiLo/(?P<low_id>[0-9]+)/delete_low$', views.delete_Lo, name='delete_Lo')
+ #show_HiLo/(?P<low_id>[0-9]+)/delete
 
 ]
