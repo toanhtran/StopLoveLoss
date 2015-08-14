@@ -25,12 +25,25 @@ def new_highs(request):
 def show_HiLo(request):
 	highs = Highs.objects.filter(user_id=request.user.id)
 	lows = Lows.objects.filter(user_id=request.user.id)
-	return render(request,'Endit/HiLo.html',{'highs':highs,'lows':lows})
+	# return render(request,'Endit/HiLo.html',{'highs':highs,'lows':lows}) / /
 
-	# total = 0
-	# for high in highs:
-	# 	total += highs.description
-	# return render(request,'Endit/HiLo.html',{'highs':highs,'lows':lows,'total':total})
+	total_highs = 0
+	total_lows = 0
+	for high in highs:
+		total_highs += 1
+	print total_highs
+	for low in lows:
+		total_lows += 1
+	print total_lows
+
+	# ratio = float(total_lows)/total_highs
+	# if ratio > 0.1:
+	# 	message = 'this'
+	# if ratio >0.5
+	# 	message = 'balh'
+
+
+	return render(request,'Endit/HiLo.html',{'highs':highs,'lows':lows,'total_highs':str(total_highs),'total_lows':str(total_lows)})
 	
 
 def create_low(request):
@@ -38,7 +51,8 @@ def create_low(request):
 
 def new_lows(request):
 	new_lows=Lows()
-	new_lows.desciption = request.POST.get('lows')
+	new_lows.description = request.POST.get('lows')
+	# print request.POST.get("lows")
 	new_lows.user_id = request.user.id
 	new_lows.save()
 	return redirect('Endit:show_HiLo')
