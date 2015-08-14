@@ -25,14 +25,12 @@ def new_highs(request):
 def show_HiLo(request):
 	highs = Highs.objects.filter(user_id=request.user.id)
 	lows = Lows.objects.filter(user_id=request.user.id)
-	total_highs = 0
-	total_lows = 0 
-	for high in highs:
-		total_highs += highs
-	for low in lows:
-		total_lows += lows
+	return render(request,'Endit/HiLo.html',{'highs':highs,'lows':lows})
 
-	return render(request,'Endit/HiLo.html',{'highs':highs,'lows':lows,'total_highs':total_highs,'total_lows':total_lows})
+	# total = 0
+	# for high in highs:
+	# 	total += highs.description
+	# return render(request,'Endit/HiLo.html',{'highs':highs,'lows':lows,'total':total})
 	
 
 def create_low(request):
