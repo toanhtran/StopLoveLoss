@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.core.urlresolvers import reverse
@@ -36,27 +36,27 @@ def show_HiLo(request):
 	print total_lows
 
 	ratio = float(total_lows)/total_highs
-	if ratio > 0.6:
+	if ratio > 0.9:
+		message = "Your relationship is awesome! You are Platinum. The notebook couple has nothing on you." 
+	if ratio > 0.8: 
 		message = "Your relationship is great! You are Golden."
-	if ratio > 0.1:
+	if ratio > 0.5:
 		message = "Your relationship is good! You are Silver."
-	if ratio > 0.05:
-		message = "Your relationship is awesome! You are Platinum. The notebook couple has nothing on you."
-	if ratio > 1.0:
-		message = "Your realtionship is okay. You are Brozne. You would last longer than a Hollywood couple."
-	if ratio > 1.125:
+	if ratio > 0.3:
+		message = "Your relationship is okay. You are Brozne. You would last longer than Hollywood couple."
+	if ratio >  0.1:
+		message = "Your relationship could be better. Your relationship is So-So"
+	if ratio > 0.0:
 		message = "Your relationship is BAD. Trash day if fast approaching."
-	if ratio > 5:
+	if ratio > 2.0:
 		message = "Your relationship is heading towards splitsville. It's time to give the, 'The Talk'."
-	if ratio > 8:
-		message = "Your relationship sucks! What are you waiting for> It is time to END.IT.NOW."
-
-
+	if ratio > 3.0:
+		message = "Your relationship sucks! What are you waiting for? It is time to END.IT.NOW."
 
 	return render(request,'Endit/HiLo.html',{'highs':highs,'lows':lows,'total_highs':str(total_highs),'total_lows':str(total_lows),"message":message})
-def delete_HiLo(request):
-	highs=highs = Highs.objects.filter(user_id=request.user.id)
-	highs.remove(Highs.objects.get(user_id=request.user.id))
+def delete_HiLo(request, high_id):
+	highs=Highs.objects.get(id=high_id)
+	highs.delete()
 	return HttpResponseRedirect(reverse('Endit:show_HiLo'))
 
 def create_low(request):

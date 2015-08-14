@@ -26,7 +26,7 @@
 	<ul>
 		{% for high in highs %}
 		<li><a>{{ high.description }}</a>
-			<a href="{% url 'Endit:delete_HiLo'%}/{{ high.id}}">Remove</a></li>
+			<a href="/Endit/show_HiLo/{{ high.id}}/delete">Remove</a></li>
 		{% endfor %}
 	</ul>
 	{% endif %}
