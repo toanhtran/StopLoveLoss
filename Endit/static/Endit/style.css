@@ -52,12 +52,14 @@ a {
     text-decoration: none;
     color: #188989;
     font-family: 'Megrim', cursive;
+   /* font-size: 20px;
+    font-weight: bold;*/
 }
 a:hover {
-    color:#319797;
+    color:#00CED1;
 }
 a: visited {
-  color:#00CED2 ;
+  color:#00CED3 ;
 }
 
 
@@ -123,7 +125,14 @@ p {
 
 }
 
+.high_lows{
+  text-decoration: none;
+    color: #188989;
+    font-family: 'Megrim', cursive;
+    font-size: 20px;
+    font-weight: bold;
 
+}
 
 h1 {
 	color: white;

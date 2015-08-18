@@ -29,7 +29,7 @@
 	{% csrf_token %}
 	<ul> 
 		{% for high in highs %}
-		<li><a>{{ high.description }}</a>
+		<li><a class="high_lows">{{ high.description }}</a>
 			<a href="/Endit/show_HiLo/{{ high.id}}/delete">X</a></li>
 		{% endfor %}
 	</ul>
@@ -41,7 +41,7 @@
 	{% csrf_token %}
 	<ul class="lows_items">
 		{% for low in lows %}
-		<li><a>{{ low.description }}</a>
+		<li><a class="high_lows">{{ low.description }}</a>
 			<a>{% ifequal low.level 3 %}
 				Deal Breaker
 				{% endifequal %}
