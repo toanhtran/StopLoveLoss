@@ -1,29 +1,32 @@
+{% extends "members/base.html" %}
+{% block content %}
 {% load staticfiles %}
 
 <link rel="stylesheet" type="text/css" href="{% static 'Endit/style.css' %}" />
-
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
 <!DOCTYPE html>
 <head>
 	<title> High/Low</title>
 </head>
 <body>
-	<h1> PROFILE</h1>
+	<h1> {{user.first_name}} {{user.last_name}} Profile</h1>
 	<p> Highs-track all the great stuff your partners does.</p>
 	<p> Lows-tracks all the crappy things they do that you don't like. 
-	<p>Happiness ration is a metric to see how your relationship is going. More highs = better relationship. If you have more lows = bad relationship.
+	<p>Happiness ratio is a metric to see how your relationship is going. More highs = better relationship. If you have more lows = bad relationship.
 
-</p> *You can share the this list with your partner to tell them how great they are doing and the status of your happiness. </p>
-<h1> RELATIONSHIP STATUS</h1>
+<h1> Relationship Status</h1>
 
 <h2> HAPPINESS RATIO: {{total_lows}}:{{total_highs}}
-	<p>{{message}}</p> 
+	<p id='message'>{{message}}</p> 
 
 	<h1>TOTAL HIGHS: {{ total_highs }}</h1>
 
 <h2 id='highs'>HIGHS</h2>
 {% if highs %}
 	{% csrf_token %}
-	<ul>
+	<ul> 
 		{% for high in highs %}
 		<li><a>{{ high.description }}</a>
 			<a href="/Endit/show_HiLo/{{ high.id}}/delete">Remove</a></li>
@@ -38,16 +41,26 @@
 	<ul class="lows_items">
 		{% for low in lows %}
 		<li><a>{{ low.description }}</a>
+			<a>{% ifequal low.level 3 %}
+				Deal Breaker
+				{% endifequal %}
+				{% ifequal low.level 2 %}
+				Pet Peeve
+				{% endifequal %}
+				{% ifequal low.level 1 %}
+				Slightly Annoying
+				{% endifequal %}
+			</a>
 			<a href="/Endit/show_HiLo/{{ low.id }}/delete_low">Remove</a></li>
 		{% endfor %}
 		
 	</ul>
 	{% endif %}
 
-<h1> YOUR HAPPINESS RATIO {{total_lows}}:{{total_highs}} {{ ratio }}</h1>
+<h1 class='happiness_ration'> YOUR HAPPINESS RATIO {{total_lows}}:{{total_highs}} {{ ratio }}</h1>
 <p> A good ratio for happiness is for every LOW you should have at least eight HIGHS to combat the bad in your relationship</p>
 
-	<ol>
+	<!-- <ol>
 		<li>1:20 Your relationship is awesome! You are Platinum</li>
 		<li> 1:15  You are in a great relationship. You are Golden</li>
 		<li>1:10 You are in good shape. Your are Silver</li>
@@ -56,7 +69,10 @@
 		<li>1:1 Half the time you are happy the other half your are miserable. This prebreak stage. 
 		<li> 5:1 You relationship is heading towards splitsville. It's time to give the, "It's you, not me speech"
 		<li> 8:1 Your relationship sucks! What are you waiting for? It is time to END. IT. NOW.
-
-
+ -->
+</div>
+  </div>
+</div>
+{% endblock %}
 
 

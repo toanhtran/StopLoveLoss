@@ -1,3 +1,12 @@
+{% extends "members/base.html" %}
+{% block content %}
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'Endit/style.css' %}" />
+
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+
 <h1>Sign up form</h1>
 {{ user.last_name}}
 <form action='register' method='post'>
@@ -14,3 +23,10 @@
 	<input name='password'>
 	<br></br>
 	<input type="submit" value="Sign up">
+
+
+		</div>
+  	</div>
+</div>
+
+{% endblock %}

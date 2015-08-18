@@ -50,11 +50,16 @@ ol, ul {
 
 a {
     text-decoration: none;
-    color: #21B721;
+    color: #188989;
 }
 a:hover {
-    color:#BCF6BC;
+    color:#319797;
 }
+a: visited {
+  color:#00CED2 ;
+}
+
+
 
 /************************
  * End of Reset
@@ -63,13 +68,21 @@ a:hover {
 /*http://paletton.com/#uid=7000u0khHE37vVac+NklIvEqisE
 */
 /************************
- *Product Pages
+Home Page
+ ************************/
+
+.home_body{
+  color: #fff;
+  margin: 10px 10px;
+}
+/************************
+General
  ************************/
 
 
 
 body {
-/*	background: #62DA62;
+/*	background: #4FB2C5;
 */    font-family: Helvetica, sans-serif;
     -webkit-font-smoothing: antialiased;
     padding: 1rem 0.938rem;
@@ -77,16 +90,27 @@ body {
     min-width: 37.5rem;
     text-align: center;
     overflow: auto;
-    margin-top: 5%;
-    margin-left: 0px;
-    margin-right: 20px;
-    margin-bottom: 5%;
-    padding: 10px 10px;
+    margin-top: 2%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 2%;
+    padding: 20px 20px;
 }
+p {
+  color: #00CED1;
+}
+#message {
+  color:red;
+  font-weight: 24px;
+  font-family: sans-serif;
+
+}
+
+
+
 h1 {
 	color: white;
-	background-color: #00CED1;
-	/*background: #00CED1;*/
+  background: #00CED1;
 	font-weight: bold;
 	font-family:'Bad Script',Helvetica, sans-serif;
     height: 60px;
@@ -96,11 +120,11 @@ h1 {
 h2 {
 	font-family: Helvetica;
 	font-weight: italic;
-  color: #FC5151;
+  color: #FFF;
 }
 
 #highs{
-  color:#21B721;
+  color:#FF8A29;
   font-weight: bold;
 }
 #lows {
@@ -116,7 +140,11 @@ h3 {
     font-family: Helvetica;
     font-weight: bold;
     color: #FC5151;
+}
 
+h4 {
+
+  
 }
 
 input::-webkit-input-placeholder {
@@ -152,9 +180,9 @@ input::-webkit-input-placeholder {
 
 form {
   max-width: 100px;
-  margin: 10px auto;
-  padding: 5px 5px;
-  background: #FFC3C3;
+  margin: 5px auto;
+  padding: 10px 2px 20px;
+  background: #ADE5EF;
   border-radius: 8px;
 }
 
@@ -162,23 +190,38 @@ fieldset {
   margin-bottom: 30px;
   border: none;
 }
-.number {
-  background-color: #00CED1;
-  color: #fff;
-  height: 30px;
-  width: 30px;
-  display: inline-block;
-  font-size: 0.8em;
-  margin-right: 4px;
-  line-height: 30px;
-  text-align: center;
-  text-shadow: 0 1px 0 rgba(255,185,157,0.2);
-  border-radius: 100%;
-}
+
 form {
     max-width: 325px;
   }
+.submit{
+  width: 20px;
+  height: 20px;
+  display: block;
 
+/*  margin: 0 auto -15px auto;*/
+/*  margin-bottom: 2.75rem;
+*/  background: #fff;
+  border-radius: 80%;
+  border: 1px solid #FF7052;
+  color: #FF7052;
+  font-size: 12px;
+  cursor: pointer;
+  box-shadow: 2px 2px 2px 7px #fff;
+  transition: 0.2s ease-out;
+  
+  &:hover, &:focus{
+    background: #FF7052;
+    color: #fff;
+    outline: 0;
+  }
+  .form_btn {
+  max-width: 100px;
+  margin: 10px auto;
+  padding: 2px 2px;
+  background: #ADE5EF;
+  border-radius: 8px;
+  }
 
 /***********************
  * LOGIN FORM
@@ -296,5 +339,32 @@ form {
     border-width: 10px;
     margin-left: -10px;
     
+  }
+}
+/*********************
+*moblie styling
+**********************/
+h1{color: red !important;}
+
+@media only screen and (min-width: 0px) and (max-width: 400px) {
+  h1 {
+    color: red !important;
+  }
+}
+
+/*********************
+*tablet styling
+**********************/
+@media only screen and (min-width: 781px) and (max-width: 979px) {
+  h1 {
+    color: green !important;
+  }
+}
+/*********************
+*web styling
+**********************/
+@media only screen and (min-width: 980px) and (max-width: 1500px) {
+  h1 {
+    color: purple !important;
   }
 }

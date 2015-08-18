@@ -7,10 +7,11 @@ from members.views import User
 from django.shortcuts import redirect
 from Endit.models import Highs, Lows
 
-
 # Create your views here.
 def home(request):
 	return render(request,'Endit/home.html',{})
+def quiz(request):
+	return render(request,'Endit/quizIndex.html',{})
 
 def create_high(request):
 	return render(request, 'Endit/high_form.html', {})
@@ -38,25 +39,33 @@ def show_HiLo(request):
 		ratio = float(total_lows)/total_highs
 	else:
 		ratio = 0
-		message = "none"
-	if ratio > 0.9:
+		message = 'none'
+	
+	if ratio > 0.10:
 		message = "Your relationship is awesome! You are Platinum. The notebook couple has nothing on you." 
-	if ratio > 0.8: 
+	elif ratio > 0.12: 
 		message = "Your relationship is great! You are Golden."
-	if ratio > 0.5:
+	elif ratio > 0.14:
 		message = "Your relationship is good! You are Silver."
-	if ratio > 0.3:
+	if ratio > 0.16:
 		message = "Your relationship is okay. You are Brozne. You would last longer than Hollywood couple."
-	if ratio >  0.1:
+	if ratio >  0.14:
 		message = "Your relationship could be better. Your relationship is So-So"
 	if ratio > 0.0:
-		message = "Your relationship is BAD. Trash day if fast approaching."
+		message = "Your relationship is BAD. Trash day is fast approaching."
 	if ratio > 2.0:
 		message = "Your relationship is heading towards splitsville. It's time to give the, 'The Talk'."
 	if ratio > 4.0:
 		message = "Your relationship sucks! What are you waiting for? It is time to END.IT.NOW."
+	else:
+		message = "You are screwed"
+	
+	level = 3
 
-	return render(request,'Endit/HiLo.html',{'highs':highs,'lows':lows,'total_highs':str(total_highs),'total_lows':str(total_lows),"message":message})
+	return render(request,'Endit/HiLo.html',{'highs':highs,'lows':lows,'total_highs':str(total_highs),'total_lows':str(total_lows),"message":message,'level':level})
+
+	# return render(request,'Endit/HiLo.html',{'highs':highs,'lows':lows,'total_highs':str(total_highs),'total_lows':str(total_lows),'message':message})
+
 def delete_Hi(request, high_id):
 	highs=Highs.objects.get(id=high_id)
 	highs.delete()
@@ -73,6 +82,23 @@ def create_low(request):
 def new_lows(request):
 	new_lows=Lows()
 	new_lows.description = request.POST.get('lows')
+	new_lows.level = request.POST.get('level')[0]
 	new_lows.user_id = request.user.id
 	new_lows.save()
 	return redirect('Endit:show_HiLo')
+
+# def dealbreakers(request):
+	# return HttpResponse("This is the dealbreak page")
+# 	new_lows=Lows()
+# 	new_lows.description = request.POST.get('lows')
+# 	new_lows.level = request.POST.get('level')[0]
+# 	new_lows.user_id = request.user.id
+# 	new_lows.save()
+# 	for low in lows:
+# 		total_lows += 1
+# 	print total_lows
+# 	for level in lows_level:
+# 		total_level +=1
+
+# 	return render(request, 'Endit/dealbreakers.html',{'lows':lows,'total_lows':str(total_lows)'total_level':total_level})
+		

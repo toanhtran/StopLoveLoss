@@ -1,17 +1,38 @@
+{% extends "members/base.html" %}
+{% block content %}
 {% load staticfiles %}
 
 <link rel="stylesheet" type="text/css" href="{% static 'Endit/style.css' %}" />
 
-<h1 class="low_form"> This page tracks all the Lows </h1>
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+      	
+<h1 class="low_form"> TRACK THE LOWS </h1>
 
-<p> All the stupid stuff that your partners does that annoys you. List it here and put why it annoys and what would you recommend for a change.</p>
+<p> All the stupid stuff that your partners does that annoys you.<br/> List it here and put why it annoys and what would you recommend for a change.</p>
 
 
 <form action='new_lows' method='post'>
 {% csrf_token %}
 	<p>Low:</p>
 	<textarea name='lows'></textarea><br/><br/>
-	
-	<input type = "submit" value="Add a low">
+		<select name="level">
+			<option name ='dealbreaker' value="1"> 1- Slighly Annoying </option>
+			<option name ='dealbreaker' value="2"> 2- Pet Peeve</option>
+			<option name ='dealbreaker' value="3"> 3- Dealbreaker</option>
+			<br/>
+			</select>
+			<br/><br/>
+			<input type = "submit" value="Add a low">
+			<br/>
+		 
+
 </form>
+
+	</div>
+  </div>
+</div>
+
+{% endblock %}
 

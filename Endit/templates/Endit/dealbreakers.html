@@ -1,6 +1,13 @@
+{% extends "members/base.html" %}
+{% block content %}
 {% load staticfiles %}
 
 <link rel="stylesheet" type="text/css" href="{% static 'Endit/style.css' %}" />
+
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-md-10">
+
 
 <!DOCTYPE html>
 <html>
@@ -15,6 +22,24 @@ Here is how your flags are ranked
 2- pet peeves
 3- red flag
 
-List of dealbreakers: {{flags}}
+Total Lows: {{ total_lows }}
+List of dealbreakers: {{lows.description }} points: {{ lows.level}}
+
+
+<h2 id='lows'>LOWS</h2>
+{% if lows %}
+	{% csrf_token %}
+	<ul class="lows_items">
+		{% for low in lows %}
+		<li><a>{{ low.description }}</a>
+			<a>{{ low.level }}</a>
+			</li>
+		{% endfor %}
+
+		</div>
+  	</div>
+</div>
 </body>
 </html>
+
+{% endblock %}

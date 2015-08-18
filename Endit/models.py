@@ -20,10 +20,12 @@ class Highs(models.Model):
 class Lows(models.Model):
 	description = models.TextField(max_length=250)
 	user = models.ForeignKey(User)
-
+	level = models.IntegerField()
+	
 	def __str__(self):
 		return self.description
 		return self.user
+		return self.level
 
 class Dealbreakers(models.Model):
 	flags = models.IntegerField()

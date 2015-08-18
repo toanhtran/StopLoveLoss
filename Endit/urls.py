@@ -11,7 +11,6 @@ urlpatterns = [
  url(r'^create_low$', views.create_low, name='create_low'),
  url(r'^new_lows$', views.new_lows, name='new_lows'),
  url(r'^show_HiLo/(?P<high_id>[0-9]+)/delete$', views.delete_Hi, name='delete_Hi'),
- url(r'^show_HiLo/(?P<low_id>[0-9]+)/delete_low$', views.delete_Lo, name='delete_Lo')
- #show_HiLo/(?P<low_id>[0-9]+)/delete
-
+ url(r'^show_HiLo/(?P<low_id>[0-9]+)/delete_low$', views.delete_Lo, name='delete_Lo'),
+ url(r'^quiz$',views.quiz, name='quiz')
 ]
