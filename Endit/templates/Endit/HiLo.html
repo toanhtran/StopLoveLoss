@@ -3,6 +3,7 @@
 {% load staticfiles %}
 
 <link rel="stylesheet" type="text/css" href="{% static 'Endit/style.css' %}" />
+
 <div class="container-fluid">
     <div class="row">
       <div class="col-md-12">
@@ -29,7 +30,7 @@
 	<ul> 
 		{% for high in highs %}
 		<li><a>{{ high.description }}</a>
-			<a href="/Endit/show_HiLo/{{ high.id}}/delete">Remove</a></li>
+			<a href="/Endit/show_HiLo/{{ high.id}}/delete">X</a></li>
 		{% endfor %}
 	</ul>
 	{% endif %}
@@ -51,7 +52,7 @@
 				Slightly Annoying
 				{% endifequal %}
 			</a>
-			<a href="/Endit/show_HiLo/{{ low.id }}/delete_low">Remove</a></li>
+			<a href="/Endit/show_HiLo/{{ low.id }}/delete_low">X</a></li>
 		{% endfor %}
 		
 	</ul>

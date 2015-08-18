@@ -51,6 +51,7 @@ ol, ul {
 a {
     text-decoration: none;
     color: #188989;
+    font-family: 'Megrim', cursive;
 }
 a:hover {
     color:#319797;
@@ -76,10 +77,23 @@ Home Page
   margin: 10px 10px;
 }
 /************************
+NAV
+ ***********************/
+
+
+
+.navbar-brand{
+  font-family: 'Satisfy';
+  font-size: 25px;
+}
+
+.nav navbar-nav navbar-right {
+  font-family: 'Megrim', cursive;
+}
+
+/************************
 General
  ************************/
-
-
 
 body {
 /*	background: #4FB2C5;
@@ -98,11 +112,14 @@ body {
 }
 p {
   color: #00CED1;
+  font-family: 'Megrim', cursive;
+  font-weight: bold;
+
 }
 #message {
   color:red;
-  font-weight: 24px;
-  font-family: sans-serif;
+  font-weight: 50px;
+  font-family: 'Satisfy';
 
 }
 
@@ -112,13 +129,14 @@ h1 {
 	color: white;
   background: #00CED1;
 	font-weight: bold;
-	font-family:'Bad Script',Helvetica, sans-serif;
+  font-size: 25px;
+	font-family:'Megrim', cursive;
     height: 60px;
-    padding: 1.35rem;
+    padding: 1rem;
 
 }
 h2 {
-	font-family: Helvetica;
+	font-family: 'Satisfy';
 	font-weight: italic;
   color: #FFF;
 }
@@ -137,21 +155,28 @@ h2 {
 }
 
 h3 {
-    font-family: Helvetica;
+  font-family: 'Satisfy', cursive;
     font-weight: bold;
     color: #FC5151;
 }
 
 h4 {
+  font-family: 'Satisfy',cursive;
+  font-size: 30px;
 
   
 }
 
 input::-webkit-input-placeholder {
-    font-family: Helvetica;
+  font-family: 'Satisfy';
    color: rgba(225,185,157);
    text-transform: lowercase;
    text-align: center;
+}
+
+h6 {
+  font-family: 'Megrim';
+  font-size: 12px;
 
 }
 .shop{
@@ -194,10 +219,11 @@ fieldset {
 form {
     max-width: 325px;
   }
-.submit{
+submit{
   width: 20px;
   height: 20px;
   display: block;
+  font-family: 'Satisfy';
 
 /*  margin: 0 auto -15px auto;*/
 /*  margin-bottom: 2.75rem;
@@ -221,6 +247,7 @@ form {
   padding: 2px 2px;
   background: #ADE5EF;
   border-radius: 8px;
+  font-family: 'Satisfy';
   }
 
 /***********************

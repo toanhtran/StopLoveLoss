@@ -1,7 +1,7 @@
 var pos = 0, test, test_status, question, choice, choices, chA, chB, chC, correct = 0;
 var questions = [
     [ "I typically I am the :", "Breaker upper; I leave a trail of broken hearts", "Broken hearted; Always the bridesmaid never the bride", "Player; Don't hate the player, hate the game", "B" ],
-	[ "After a breakup I think", " Glad it's over, that was the longest two weeks of my life. ", "I will be spinster cat person and alone forever", "It was the Titanic but I didn't make it out in time.", "C" ],
+	[ "After a breakup I think", " Glad it's over, that was the longest two weeks of my life. ", "I will be spinster cat person and alone forever", "It was a train wreck and there were no survivors.", "C" ],
 	[ "What is the average duration of your past relationships?", "Two - four weeks; My love life is a revolving door", "Six month to a year; Unoffically offical ", "Two years +; I'm serial monagamist", "C" ],
 	[ "I believe everyone I date could be 'The One'?", "True; I believe in love at first sight", "False; Love is a battlefield", "Maybe, if their FICO score is over 800", "A" ],
 	[ "I attract losers?", "Yes, I'm a loser magnet", "No, I can read people like a book", "Sometimes, I'm 50/50", "A" ]

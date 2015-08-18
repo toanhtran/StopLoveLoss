@@ -41,21 +41,18 @@ def show_HiLo(request):
 		ratio = 0
 		message = 'none'
 	
-	if ratio > 0.10:
+	if ratio > 0.06:
 		message = "Your relationship is awesome! You are Platinum. The notebook couple has nothing on you." 
-	elif ratio > 0.12: 
-		message = "Your relationship is great! You are Golden."
-	elif ratio > 0.14:
-		message = "Your relationship is good! You are Silver."
-	if ratio > 0.16:
+
+	if ratio > 0.03:
 		message = "Your relationship is okay. You are Brozne. You would last longer than Hollywood couple."
-	if ratio >  0.14:
+	if ratio >  0.1:
 		message = "Your relationship could be better. Your relationship is So-So"
 	if ratio > 0.0:
 		message = "Your relationship is BAD. Trash day is fast approaching."
-	if ratio > 2.0:
+	if ratio > 1.0:
 		message = "Your relationship is heading towards splitsville. It's time to give the, 'The Talk'."
-	if ratio > 4.0:
+	if ratio > 3.0:
 		message = "Your relationship sucks! What are you waiting for? It is time to END.IT.NOW."
 	else:
 		message = "You are screwed"
