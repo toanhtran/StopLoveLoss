@@ -3,24 +3,20 @@
 {% load staticfiles %}
 
 <link rel="stylesheet" type="text/css" href="{% static 'Endit/style.css' %}" />
-
+<!--  -->
 <div class="container-fluid">
     <div class="row">
       <div class="col-md-12">
-<!DOCTYPE html>
-<head>
-	<title> High/Low</title>
-</head>
-<body>
+
+
 	<h1> {{user.first_name}} {{user.last_name}} Profile</h1>
 	<p> Highs-track all the great stuff your partners does.</p>
 	<p> Lows-tracks all the crappy things they do that you don't like. 
-	<p>Happiness ratio is a metric to see how your relationship is going. More highs = better relationship. If you have more lows = bad relationship.
+	<p>Happiness ratio is a metric to see how your relationship is going.<br/> More highs than lows = better relationship. <br/>More lows than bad = bad relationship.
 
-<h1> Relationship Status</h1>
-
-<h2> HAPPINESS RATIO: {{total_lows}}:{{total_highs}}
-	<p id='message'>{{message}}</p> 
+<h1> HAPPINESS RATIO: {{total_lows}}:{{total_highs}}</h1>
+<p> A good ratio for happiness is for every LOW you should have at least eight HIGHS to combat the bad in your relationship</p>
+	<p id='message'>Status: {{message}}</p> 
 
 	<h1>TOTAL HIGHS: {{ total_highs }}</h1>
 
@@ -58,9 +54,9 @@
 	</ul>
 	{% endif %}
 
-<h1 class='happiness_ration'> YOUR HAPPINESS RATIO {{total_lows}}:{{total_highs}} {{ ratio }}</h1>
+<!-- <h1 class='happiness_ration'> YOUR HAPPINESS RATIO {{total_lows}}:{{total_highs}} {{ ratio }}</h1>
 <p> A good ratio for happiness is for every LOW you should have at least eight HIGHS to combat the bad in your relationship</p>
-
+ -->
 	<!-- <ol>
 		<li>1:20 Your relationship is awesome! You are Platinum</li>
 		<li> 1:15  You are in a great relationship. You are Golden</li>
@@ -71,7 +67,7 @@
 		<li> 5:1 You relationship is heading towards splitsville. It's time to give the, "It's you, not me speech"
 		<li> 8:1 Your relationship sucks! What are you waiting for? It is time to END. IT. NOW.
  -->
-</div>
+	</div>
   </div>
 </div>
 {% endblock %}

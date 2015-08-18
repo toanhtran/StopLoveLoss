@@ -93,6 +93,14 @@ NAV
   font-family: 'Megrim', cursive;
 }
 
+
+.navbar-default {
+  border-color: #00CED1;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+  color:#00CED1;
+}
 /************************
 General
  ************************/
@@ -119,8 +127,8 @@ p {
 
 }
 #message {
-  color:red;
-  font-weight: 50px;
+  color:#FF2929;
+  font-size: 20px;
   font-family: 'Satisfy';
 
 }
@@ -155,7 +163,7 @@ h2 {
   font-weight: bold;
 }
 #lows {
-  color: #E42929;
+  color: #14388C;
   font-weight: bold;
 
 }
@@ -188,16 +196,6 @@ h6 {
   font-size: 12px;
 
 }
-.shop{
-
-    color:#00CED1;
-    font-family: Helvetica;
-}
-
-.cart {
-    font-family: 'Bad Script';
-    color: #FFB99D ;
-}
 
 .pagination{
 	background-image: 
@@ -218,6 +216,16 @@ form {
   padding: 10px 2px 20px;
   background: #ADE5EF;
   border-radius: 8px;
+  font-family: 'Megrim', cursive;
+
+}
+
+input[type=submit] {
+  font-weight: bold;
+}
+
+select, textarea {
+  font-family: 'Satisfy', cursive;
 }
 
 fieldset {
@@ -257,6 +265,10 @@ submit{
   background: #ADE5EF;
   border-radius: 8px;
   font-family: 'Satisfy';
+  }
+
+  .select_form{
+    font-family: 'Megrim', cursive;
   }
 
 /***********************

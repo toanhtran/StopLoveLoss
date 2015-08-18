@@ -40,28 +40,23 @@ def show_HiLo(request):
 	else:
 		ratio = 0
 		message = 'none'
-	
-	if ratio > 0.06:
-		message = "Your relationship is awesome! You are Platinum. The notebook couple has nothing on you." 
-
-	if ratio > 0.03:
-		message = "Your relationship is okay. You are Brozne. You would last longer than Hollywood couple."
-	if ratio >  0.1:
-		message = "Your relationship could be better. Your relationship is So-So"
 	if ratio > 0.0:
 		message = "Your relationship is BAD. Trash day is fast approaching."
+	if ratio > 0.03:
+		message = "Your relationship is okay. You are Brozne. You would last longer than Hollywood couple."
+	if ratio > 0.06:
+		message = "Your relationship is awesome! You are Platinum. The notebook couple has nothing on you." 
+	if ratio >  0.1:
+		message = "Your relationship could be better. Your relationship is So-So"
 	if ratio > 1.0:
 		message = "Your relationship is heading towards splitsville. It's time to give the, 'The Talk'."
 	if ratio > 3.0:
 		message = "Your relationship sucks! What are you waiting for? It is time to END.IT.NOW."
-	else:
-		message = "You are screwed"
 	
 	level = 3
 
 	return render(request,'Endit/HiLo.html',{'highs':highs,'lows':lows,'total_highs':str(total_highs),'total_lows':str(total_lows),"message":message,'level':level})
 
-	# return render(request,'Endit/HiLo.html',{'highs':highs,'lows':lows,'total_highs':str(total_highs),'total_lows':str(total_lows),'message':message})
 
 def delete_Hi(request, high_id):
 	highs=Highs.objects.get(id=high_id)
