@@ -101,5 +101,15 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
+import dj_database_url
 
+if os.environ.has_key('DATABASE_URL') and dj_database_url.config():
+    DATABASES['default'] = dj_database_url.config()
+
+import os 
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__)) 
+STATIC_ROOT = 'staticfiles' 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = ( os.path.join(BASE_DIR, 'static'), )
