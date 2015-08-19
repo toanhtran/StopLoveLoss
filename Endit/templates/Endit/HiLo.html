@@ -9,16 +9,16 @@
       <div class="col-md-12">
 
 
-	<h1> {{user.first_name}} {{user.last_name}} Profile</h1>
+	<h1 class="HiLo_header"> {{user.first_name}} {{user.last_name}} Profile</h1>
 	<p> Highs-track all the great stuff your partners does.</p>
 	<p> Lows-tracks all the crappy things they do that you don't like. 
 	<p>Happiness ratio is a metric to see how your relationship is going.<br/> More highs than lows = better relationship. <br/>More lows than bad = bad relationship.
 
-<h1> HAPPINESS RATIO: {{total_lows}}:{{total_highs}}</h1>
+<h1 class="HiLo_header"> Happiness Ratio: {{total_lows}}:{{total_highs}}</h1>
 <p> A good ratio for happiness is for every LOW you should have at least eight HIGHS to combat the bad in your relationship</p>
 	<p id='message'>Status: {{message}}</p> 
 
-	<h1>TOTAL HIGHS: {{ total_highs }}</h1>
+	<h1 class="HiLo_header">Total Highs: {{ total_highs }}</h1>
 
 <h2 id='highs'>HIGHS</h2>
 {% if highs %}
@@ -31,7 +31,7 @@
 	</ul>
 	{% endif %}
 
-<h1>TOTAL LOWS: {{ total_lows }}</h1>
+<h1 class="HiLo_header">Total Lows: {{ total_lows }}</h1>
 <h2 id='lows'>LOWS</h2>
 {% if lows %}
 	{% csrf_token %}

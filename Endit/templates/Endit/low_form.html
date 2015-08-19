@@ -8,26 +8,26 @@
     <div class="row">
       <div class="col-md-12">
       	
-<h1 class="low_form"> TRACK THE LOWS </h1>
+		<h1 class="HiLo_header"> Track the Lows </h1>
+		<p> All the stupid stuff that your partners does that annoys you.<br/> List it here and put why it annoys and what would you recommend for a change.</p>
 
-<p> All the stupid stuff that your partners does that annoys you.<br/> List it here and put why it annoys and what would you recommend for a change.</p>
+		<iframe src="//giphy.com/embed/WysQ3L6fTn04M" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="http://giphy.com/gifs/relationship-toradora-animegifs-WysQ3L6fTn04M">via GIPHY</a></p>
 
 
-<form action='new_lows' method='post'>
-{% csrf_token %}
-	<p>Low:</p>
-	<textarea name='lows'></textarea><br/><br/>
-		<select name="level">
-			<option name ='dealbreaker' value="1"> 1- Slighly Annoying </option>
-			<option name ='dealbreaker' value="2"> 2- Pet Peeve</option>
-			<option name ='dealbreaker' value="3"> 3- Dealbreaker</option>
-			<br/>
+		<form action='new_lows' method='post'>
+			{% csrf_token %}
+			<p class="form_textbox">Low:</p>
+			<textarea name='lows'></textarea><br/><br/>
+			<select name="level">
+				<option name ='dealbreaker' value="1"> 1- Slighly Annoying </option>
+				<option name ='dealbreaker' value="2"> 2- Pet Peeve</option>
+				<option name ='dealbreaker' value="3"> 3- Dealbreaker</option>
+				<br/>
 			</select>
 			<br/><br/>
 			<input type = "submit" value="Add a low" class="low_form_select">
 			<br/>
-</form>
-
+		</form>
 	</div>
   </div>
 </div>

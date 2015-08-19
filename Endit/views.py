@@ -51,7 +51,7 @@ def show_HiLo(request):
 	if ratio > 1.0:
 		message = "Your relationship is heading towards splitsville. It's time to give the, 'The Talk'."
 	if ratio > 3.0:
-		message = "Your relationship sucks! What are you waiting for? It is time to END.IT.NOW."
+		message = "Your relationship sucks! It is time to END.IT.NOW."
 	
 	level = 3
 

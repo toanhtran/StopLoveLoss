@@ -1,4 +1,4 @@
-
+/*
 /* Paul Irish Box-Sizing: Border-Box reset - apply a natural box layout model to all elements, but allowing components to change http://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
 html {
   box-sizing: border-box;
@@ -129,8 +129,8 @@ p {
 #message {
   color:#FF2929;
   font-size: 20px;
-  font-family: 'Satisfy';
-
+/*  font-family: 'Satisfy';
+*/
 }
 
 .high_lows{
@@ -197,6 +197,12 @@ h6 {
 
 }
 
+.HiLo_header{
+  font-family: 'Satisfy',cursive;
+  font-size: 27px;
+
+}
+
 .pagination{
 	background-image: 
 	linear-gradient(#00CED1,#FFB99D);
@@ -206,9 +212,9 @@ h6 {
 	background: #00CED1;
 }
 
-/************************
+/***********************
  * SIGNUP FORM
- ************************/
+ ***********************/
 
 form {
   max-width: 100px;
@@ -236,6 +242,12 @@ fieldset {
 form {
     max-width: 325px;
   }
+  .form_textbox{
+    font-family: 'Satisfy';
+    font-size: 22px;
+  }
+
+
 submit{
   width: 20px;
   height: 20px;
@@ -415,4 +427,4 @@ h1{color: red !important;}
   h1 {
     color: purple !important;
   }
-}
+}*/

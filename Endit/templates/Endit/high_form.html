@@ -8,18 +8,17 @@
     <div class="row">
       <div class="col-md-12">
 
-<h1 class="high_form"> TRACK YOUR HIGHS!</h1>
-<p> Tracks all the great stuff your partner does.</p>
-<iframe src="//giphy.com/embed/MR7QcgEwFc6E8" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p>
-<!-- <a href="http://giphy.com/gifs/follow-ruinedchildhood2-for-more-MR7QcgEwFc6E8">via GIPHY</a></p> -->
+		<h1 class="HiLo_header"> Track your Highs!</h1>
+		<p> Tracks all the great stuff your partner does.</p>
+		<iframe src="//giphy.com/embed/MR7QcgEwFc6E8" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p>
+		<!-- <a href="http://giphy.com/gifs/follow-ruinedchildhood2-for-more-MR7QcgEwFc6E8">via GIPHY</a></p> -->
 
-<form action='new_highs' method='post'>
-{% csrf_token %}
-	<p>High:</p>
-	<textarea name='highs' name='highs'></textarea><br/><br/>
-	
-	<input type = "submit" value="Add a high">
-</form>
+		<form action='new_highs' method='post'>
+			{% csrf_token %}
+			<p class="form_textbox">High:</p>
+			<textarea name='highs' name='highs'></textarea><br/><br/>
+			<input type = "submit" value="Add a high">
+		</form>
 	</div>
   </div>
 </div>

@@ -8,16 +8,14 @@
 <div class="container-fluid fadeinDown animated">
     <div class="row">
       <div class="col-md-12">
+		<h1 class="HiLo_header"> {{user.first_name}} {{user.last_name}} Page </h1>
+			<p> Hello, {{user.first_name}} you are logged in.</p>
 
-
-<h1> {{user.first_name}} {{user.last_name}} Page </h1>
-<p> Hello, {{user.first_name}} you are logged in.</p>
-
-<form action='logout' method='post'>
-	{% csrf_token %}
-	<input type = "submit" value="Log out">
-</form>
-   </div>
-  </div>
+			<form action='logout' method='post'>
+				{% csrf_token %}
+				<input type = "submit" value="Log out">
+			</form>
+   		</div>
+  	</div>
 </div>
 {% endblock %}
